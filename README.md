@@ -1,5 +1,61 @@
 # Algorithmic trading
 
+Implementation of the Algorithmic trading project.
+
+The russian version of the task can be found in the repository.
+
+
+## Introduction
+
+In this project you will learn about interpolation and approximation algorithms. Using these algorithms, you will be able to plot the probabilistic behavior of stock quotes and their price forecasts for the foreseeable future based on historical data without regard to external factors __*__.
+
+
+## Chapter I
+
+### Interpolation
+
+*Interpolation* is a method of finding intermediate values of a quantity based on a discrete set of known values.
+
+Function interpolation is used when you want to find the value of the function $`y(х)`$ at the value of the argument $`x`$ that belongs to the interval $`[x_0, ..., x_n]`$ ($`x_0, ..., x_n`$ are values given in the table), but does not coincide with any of the known values of this interval.
+
+In many cases, the analytical expression of the function $`y(x)`$ is not known and it is not possible to find the value of this function from the table of its values.
+So, instead of it another function $`f(x)`$ is plotted, which is easy to calculate and has the same table of values (coincides with it at the points $`x_0, x_1, x_2,..., x_n`$) as $`y(x)`$.
+
+Finding an approximate function is called interpolation and points $`x_0, x_1, x_2, ..., x_n`$ are interpolation nodes. Usually the interpolating function is found as a polynomial of $`n`$ degree.
+
+### Newton interpolation polynomial
+
+If the interpolation nodes are equally spaced, so that $`x_i + 1 - x = h = const`$, where $`h`$ is the interpolation step, i.e. $`x_i = x_0 + n * h`$, then the interpolation polynomial can be written in the form proposed by Newton.
+
+Newton's first interpolation formula is found in the form: $`Pn(x) = a_0 + a_1(x - x_0) + a_2(x - x_0)(x - x_1) + ... + a_n(x - x_0)...(x - x_n)`$.
+
+### Cubic spline interpolation
+
+Cubic spline interpolation is a special case of piecewise polynomial interpolation. In this special case, the function is interpolated by a cubic polynomial between any two neighboring nodes.
+Its coefficients at each interval are determined from the conjugation conditions in the nodes:
+
+$`f_i = y_i, f'(x_i - 0) = f'(x_i + 0), f''(x_i - 0) = f''(x_i + 0), i = 1, 2, ..., n - 1`$, where $`x_i + 0`$ and $`x_i - 0`$ - the neighborhood of point $`x_i`$.
+
+In addition, there are conditions at the boundary at $`x = x_0`$ and $`x = x_n`$:
+$`f''(x_0) = 0, f''(x_n) = 0`$
+
+### Approximation
+
+*Approximation* is a replacement of some mathematical objects by others, in one sense or another, close to the original ones.
+
+When interpolating, the interpolating function strictly passes through the table nodes because the number of coefficients in the interpolating function is equal to the number of table values.
+Approximation is a method in which the approximated function passes not through the interpolation nodes, but between them in order to find additional values that are different from the table data.
+
+If the analytical expression of the function is unknown or very complex, then we have to find an empirical formula, the values of which would not differ much from the experimental data.
+
+### Least Squares Method
+
+The purpose of the least squares method is to find such values of $`x_i`$ at which the sum of the squares of deviations (errors) $`e_i = y_i - f_i(x)`$ will tend to a minimum.
+
+Since each value of $`x_i`$ is generally "accompanied" by the corresponding coefficient $`a_i (i = 0, 1, 2, ..., n)`$, the problem is reduced to finding these coefficients.
+
+
+## Chapter II
 
 ## Part 1. Interpolation of tabulated functions
 
